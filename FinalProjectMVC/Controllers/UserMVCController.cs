@@ -15,8 +15,6 @@ namespace FinalProjectMVC.Controllers
 {
     public class UserMVCController : Controller
     {
-        
-
 
         
 
@@ -34,6 +32,20 @@ namespace FinalProjectMVC.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpGet]
+        public JsonResult emailcheck(string mail)
+        {
+            var emailchecking = _context.Userinfos.Where(e => e.Email == mail).SingleOrDefault();
+            if(emailchecking!= null)
+            {
+                return Json(1);
+            }
+            else
+            {
+                return Json(0);
+            }
         }
 
 
@@ -63,7 +75,7 @@ namespace FinalProjectMVC.Controllers
 
             public IActionResult Create()
             {
-                ViewBag.year = new SelectList(_context.Years, "Years", "Years");
+            ViewBag.year = new SelectList(_context.Years, "Years", "Years") ;
 
                 return View();
 

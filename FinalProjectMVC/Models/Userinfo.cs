@@ -18,6 +18,7 @@ namespace FinalProjectWEBAPI.Models
 
 
         [Required(ErrorMessage = "Please enter your FirstName.")]
+        
         [DataType(DataType.Text)]
         public string FirstName { get; set; }
 
@@ -26,15 +27,15 @@ namespace FinalProjectWEBAPI.Models
 
         [Required(ErrorMessage = "Please enter your Age.")]
 
-        [Range(18, 50, ErrorMessage = "Please enter a between 18 and 50")]
-        public int? Age { get; set; }
+        [Range(18, 50, ErrorMessage = "Please enter age between 18 and 50")]
+        public string Age { get; set; }
 
         [Required(ErrorMessage = "Please enter your Gender.")]
         [DataType(DataType.Text)]
         public string Gender { get; set; }
 
 
-       
+
 
         [Required(ErrorMessage = "Please enter your Nationality.")]
         [DataType(DataType.Text)]
@@ -45,8 +46,12 @@ namespace FinalProjectWEBAPI.Models
         public string Address { get; set; }
 
         [Required(ErrorMessage = "Please enter your Phoneno.")]
+        [Phone]
         [DataType(DataType.PhoneNumber)]
-        public long? PhoneNo { get; set; }
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",
+            ErrorMessage ="Entered phone is not valid.")]
+
+        public string PhoneNo { get; set; }
 
         [Required(ErrorMessage = "Please enter your response.")]
         public string Asthma { get; set; }
@@ -55,7 +60,7 @@ namespace FinalProjectWEBAPI.Models
         public string Diabetes { get; set; }
 
         [Required(ErrorMessage = "Please enter the year to travel.")]
-        public int? Years { get; set; }
+        public string Years { get; set; }
 
         [Required(ErrorMessage = "Please enter the reason to travel!.")]
         public string Reason { get; set; }

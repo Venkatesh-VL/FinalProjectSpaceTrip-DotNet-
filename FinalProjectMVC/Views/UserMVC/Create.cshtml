@@ -390,7 +390,7 @@
 
             <div class="container-contact100-form-btn">
 
-                <button onclick="save()" id="save">Save</button>
+                <button onclick= "save()" id="save">Save</button>
 
 
             </div>
@@ -406,7 +406,7 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+
 
 
 
@@ -414,9 +414,9 @@
 <script>
 
     function save() {
+        alert("Saved Successfully");
         localStorage.setItem("fname", document.getElementById("firstname").value);
         localStorage.setItem("lname", document.getElementById("lastname").value);
-
         localStorage.setItem("semail", document.getElementById("email").value);
         localStorage.setItem("sphone", document.getElementById("phone").value);
         localStorage.setItem("sage", document.getElementById("age").value);
@@ -426,10 +426,9 @@
         localStorage.setItem("sdiabetes", document.getElementById("diabetes").value);
         localStorage.setItem("sreason", document.getElementById("reason").value);
         localStorage.setItem("snation", document.getElementById("nation").value);
-        localStorage.setItem("syear", document.getElementById("year").value);
+        localStorage.setItem("syear", document.getElementById("year").value);      
 
-
-
+       
     }
 
 
@@ -466,9 +465,52 @@
     }
     function clearall() {
         window.localStorage.clear();
-    }
-</script>
 
+    }
+
+
+   @* $(document).ready(function () {
+        $("#email").on("change", function () {
+            $.ajax({
+                type: "Post",
+                url: "/UserMVC/emailcheck",
+                data: { "mail": $("#email").val() },
+                success: function (data) {
+                    if (data == 1) {
+
+                        confirm("Email is already is used")
+
+                        window.location.reload();
+                    }
+
+
+                }
+            })
+        })
+    })*@
+    
+
+
+    $(document).ready(function () {
+        $("#email").on("change", function () {
+            $.ajax({
+                type: "Get",
+                url: "/UserMVC/emailcheck",
+                data: { "mail": $("#email").val() },
+                success: function (data) {
+                    if (data == 1) {
+                        $('#email').css("border-color", "Red")
+                        confirm("Email already used")
+                        window.location.reload();
+                    }
+                }
+            })
+        })
+    })
+
+
+</script>
+}
 
 
 
