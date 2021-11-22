@@ -1,0 +1,475 @@
+﻿@model FinalProjectWEBAPI.Models.Userinfo
+
+@{
+    ViewData["Title"] = "Create";
+}
+@*
+
+
+    <h1>Create</h1>
+
+    <h4>Userinfo</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label"></label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName" class="control-label"></label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Age" class="control-label"></label>
+                    <input asp-for="Age" class="form-control" />
+                    <span asp-validation-for="Age" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Gender" class="control-label"></label>
+                    <input asp-for="Gender" class="form-control" />
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Nationality" class="control-label"></label>
+                    <input asp-for="Nationality" class="form-control" />
+                    <span asp-validation-for="Nationality" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Address" class="control-label"></label>
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PhoneNo" class="control-label"></label>
+                    <input asp-for="PhoneNo" class="form-control" />
+                    <span asp-validation-for="PhoneNo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Asthma" class="control-label"></label>
+                    <input asp-for="Asthma" class="form-control" />
+                    <span asp-validation-for="Asthma" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Diabetes" class="control-label"></label>
+                    <input asp-for="Diabetes" class="form-control" />
+                    <span asp-validation-for="Diabetes" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Years" class="control-label"></label>
+                    <select asp-items="@ViewBag.year" asp-for="Years">
+                        <option>Select Year</option>
+
+                    </select>
+                    <span asp-validation-for="Years" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Reason" class="control-label"></label>
+                    <input asp-for="Reason" class="form-control" />
+                    <span asp-validation-for="Reason" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+*@
+
+<link href="~/css/style.css" rel="stylesheet" />
+@*
+    <section id="form">
+        <div class="container-contact100">
+            <div class="wrap-contact100">
+                <form asp-action="Create" class="contact100-form">
+
+                    <span class="contact100-form-title">
+                        Apply soon to land in space
+                    </span>
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+                    <label class="label-input100">Tell us your name *</label>
+                    <div class="wrap-input100 rs1-wrap-input100">
+
+                        <input asp-for="FirstName" class="input100" />
+                        <span class="focus-input100"></span>
+
+                    </div>
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+
+
+                    <div class="wrap-input100 ">
+                        <label class="control-label"></label>
+                        <input asp-for="LastName" class="input100" />
+                        <span class="focus-input100"></span>
+
+                    </div>
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+
+
+                    <label class="label-input100" for="email">Email *</label>
+                    <div class="wrap-input100 rs1-wrap-input100">
+                        <input asp-for="Email" class="input100" />
+                        <span class="focus-input100"></span>
+                    </div>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+
+
+                    <label class="label-input100">Phone number</label>
+                    <div class="wrap-input100 ">
+                        <input asp-for="PhoneNo" class="input100" />
+                        <span class="focus-input100"></span>
+
+                    </div>
+                    <span asp-validation-for="PhoneNo" class="text-danger"></span>
+
+
+                    <label class="label-input100 ">Gender *</label>
+                    <div class="wrap-input100 ">
+                        <input asp-for="Gender" id="radioid" value="Male" type="radio" name="gender" />Male
+                        <input asp-for="Gender" id="radioid" value="Female" type="radio" name="gender" />Female
+                        <span class="focus-input100"></span>
+
+                    </div>
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+
+
+                    <label class="label-input100">Year *</label>
+                    <div class="wrap-input100 ">
+                        <select id="year" class="Year" style="width: 450px;" asp-items="@ViewBag.year" asp-for="Years">
+                            <option>Select Category</option>
+                        </select>
+                    </div>
+                    <span asp-validation-for="Years" class="text-danger"></span>
+
+
+                    <label class="label-input100">Age *</label>
+                    <div class="wrap-input100 ">
+                        <input asp-for="Age" class="input100" />
+                        <span class="focus-input100"></span>
+
+                    </div>
+                    <span asp-validation-for="Age" class="text-danger"></span>
+
+
+
+
+
+
+                    <label class="label-input100">Nationality *</label>
+                    <div class="wrap-input100 ">
+                        <input asp-for="Nationality" class="input100" />
+                        <span class="focus-input100"></span>
+
+                    </div>
+                    <span asp-validation-for="Nationality" class="text-danger"></span>
+
+
+                    <label class="label-input100">Address *</label>
+                    <div class="wrap-input100 ">
+                        <input asp-for="Address" class="input100" />
+                        <span class="focus-input100"></span>
+
+                    </div>
+                    <span asp-validation-for="Address" class="text-danger"></span>
+
+
+
+
+                    <label class="label-input100 ">Asthma *</label>
+                    <div class="wrap-input100">
+                        <input asp-for="Asthma" class="input100" />
+                        <span class="focus-input100"></span>
+
+                    </div>
+                    <span asp-validation-for="Asthma" class="text-danger"></span>
+
+
+                    <label class="label-input100 ">BP/Diabetes *</label>
+                    <div class="wrap-input100 ">
+                        <input asp-for="Diabetes" class="input100" />
+                        <span class="focus-input100"></span>
+
+                    </div>
+
+                    <span asp-validation-for="Diabetes" class="text-danger"></span>
+
+
+
+
+                    <label class="label-input100">Reason to Travel *</label>
+                    <div class="wrap-input100 ">
+                        <input asp-for="Reason" class="input100" />
+                        <span class="focus-input100"></span>
+                    </div>
+                    <span asp-validation-for="Reason" class="text-danger"></span>
+
+                    <div class="container-contact100-form-btn ">
+                        <input type="submit" value="Create" class="contact100-form-bt" />
+                    </div>
+                </form>
+
+                <div class="contact100-more flex-col-c-m" );" >
+                </div>
+            </div>
+        </div>
+    </section>*@
+
+
+
+
+
+
+
+
+<section id="form">
+    <div class="container-contact100">
+        <div class="wrap-contact100">
+            <form asp-action="Create" class="contact100-form validate-form">
+
+                <span class="contact100-form-title">
+                    Apply soon to land in space
+                </span>
+
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+                <label class="label-input100">Tell us your name *</label>
+                <div class="wrap-input100 rs1-wrap-input100 validate-input">
+                    <input asp-for="FirstName" id="firstname" class="input100" type="text" placeholder="First name" />
+                    <span class="focus-input100"></span>
+
+                </div>
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+
+
+                <div class="wrap-input100 rs2-wrap-input100 validate-input">
+                    <input asp-for="LastName" id="lastname" class="input100" type="text" placeholder="Last name" />
+                    <span class="focus-input100"></span>
+
+                </div>
+                @*                <span asp-validation-for="LastName" class="text-danger"></span>
+                *@
+
+
+                <label class="label-input100">Email *</label>
+                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <input asp-for="Email" id="email" class="input100" type="text" placeholder="Enter your Email" />
+                    <span class="focus-input100"></span>
+
+                </div>
+                <span asp-validation-for="Email" class="text-danger"></span>
+
+
+
+                <label class="label-input100">Phone number</label>
+                <div class="wrap-input100">
+                    <input asp-for="PhoneNo" id="phone" class="input100" type="text" placeholder="Enter Your Phone Number" />
+                    <span class="focus-input100"></span>
+
+                </div>
+                <span asp-validation-for="PhoneNo" class="text-danger"></span>
+
+
+
+                <label class="label-input100 ">Gender *</label>
+                <div class="wrap-input100 validate-input radiostyle">
+                    <input asp-for="Gender" class="radioclass" id="gender" value="Male" type="radio" />Male
+                    <input asp-for="Gender" class="radioclass" id="gender" value="Female" type="radio" />Female
+                    <span class="focus-input100"></span>
+
+                </div>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+
+
+
+                <label class="label-input100 ">Year of Travelling *</label>
+                <div class="wrap-input100 validate-input">
+                    <select asp-for="Years" asp-items="@ViewBag.year" class="Year" style="width: 450px;" id="year">
+                        <option>Select a Year</option>
+
+                    </select>
+
+
+
+
+                </div>
+                <span asp-validation-for="Years" class="text-danger"></span>
+
+
+
+                <label class="label-input100">Age *</label>
+                <div class="wrap-input100 ">
+                    <input asp-for="Age" id="age" class="input100" type="text" placeholder="Enter your age" />
+                    <span class="focus-input100"></span>
+
+                </div>
+                <span asp-validation-for="Age" class="text-danger"></span>
+
+
+
+                <label class="label-input100">Nationality *</label>
+                <div class="wrap-input100 ">
+                    <input asp-for="Nationality" id="nation" class="input100" type="text" placeholder="Enter your nationality" />
+                    <span class="focus-input100"></span>
+
+                </div>
+                <span asp-validation-for="Nationality" class="text-danger"></span>
+
+
+
+                <label class="label-input100">Address *</label>
+                <div class="wrap-input100 validate-input">
+                    <input asp-for="Address" id="address" class="input100" type="text" placeholder="Enter your address" />
+                    <span class="focus-input100"></span>
+
+                </div>
+                <span asp-validation-for="Address" class="text-danger"></span>
+
+
+
+                <label class="label-input100 ">Asthma *</label>
+                <div class="wrap-input100 validate-input radiostyle">
+                    <input asp-for="Asthma" id="asthma" class="radioclass" value="Yes" type="radio" /> Yes
+                    <input asp-for="Asthma" id="asthma" class="radioclass" value="No" type="radio" />No
+                    <span class="focus-input100"></span>
+
+                </div>
+                <span asp-validation-for="Asthma" class="text-danger"></span>
+
+
+
+                <label class="label-input100 ">BP/Diabetes *</label>
+                <div class="wrap-input100 validate-input radiostyle">
+                    <input asp-for="Diabetes" id="diabetes" class="radioclass" value="Yes" type="radio" />Yes
+                    <input asp-for="Diabetes" id="diabetes" class="radioclass" value="No" type="radio" />No
+                    <span class="focus-input100"></span>
+
+                </div>
+                <span asp-validation-for="Diabetes" class="text-danger"></span>
+
+
+
+                <label class="label-input100">Reason to Travel *</label>
+                <div class="wrap-input100 validate-input" data-validate="Message is required">
+                    <textarea asp-for="Reason" id="message" class="input100" placeholder="Write us a message"></textarea>
+                    <span class="focus-input100"></span>
+
+
+                </div>
+                <span asp-validation-for="Reason" class="text-danger"></span>
+
+
+                <div class="container-contact100-form-btn">
+
+                    <input type="submit" value="Submit" onclick="clearall()" class="contact100-form-btn" />
+
+
+                </div>
+
+
+
+
+            </form>
+
+
+            <div class="contact100-more flex-col-c-m">
+            </div>
+
+            <div class="container-contact100-form-btn">
+
+                <button onclick="save()" id="save">Save</button>
+
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+    
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+
+<script>
+
+    function save() {
+        localStorage.setItem("fname", document.getElementById("firstname").value);
+        localStorage.setItem("lname", document.getElementById("lastname").value);
+
+        localStorage.setItem("semail", document.getElementById("email").value);
+        localStorage.setItem("sphone", document.getElementById("phone").value);
+        localStorage.setItem("sage", document.getElementById("age").value);
+        localStorage.setItem("saddress", document.getElementById("address").value);
+        localStorage.setItem("sgender", document.getElementById("gender").value);
+        localStorage.setItem("sasthma", document.getElementById("asthma").value);
+        localStorage.setItem("sdiabetes", document.getElementById("diabetes").value);
+        localStorage.setItem("sreason", document.getElementById("reason").value);
+        localStorage.setItem("snation", document.getElementById("nation").value);
+        localStorage.setItem("syear", document.getElementById("year").value);
+
+
+
+    }
+
+
+
+
+    window.onload = function () {
+        var faname = localStorage.getItem("fname");
+        var emails = localStorage.getItem("semail");
+        var laname = localStorage.getItem("lname");
+        var ph = localStorage.getItem("sphone");
+        var addr = localStorage.getItem("saddress");
+        var gen = localStorage.getItem("sgender");
+        var asth = localStorage.getItem("sasthma");
+        var diab = localStorage.getItem("sdiabetes");
+        var years = localStorage.getItem("syear");
+        var age1 = localStorage.getItem("sage");
+        var rsn = localStorage.getItem("sreason");
+        var nat = localStorage.getItem("snation");
+        if (faname !== null) document.getElementById("firstname").value = faname;
+        if (emails !== null) document.getElementById("email").value = emails;
+        if (laname !== null) document.getElementById("lastname").value = laname;
+        if (ph !== null) document.getElementById("phone").value = ph;
+        if (addr !== null) document.getElementById("address").value = addr;
+        if (gen !== null) document.getElementById("gender").value = gen;
+        if (asth !== null) document.getElementById("asthma").value = asth;
+        if (diab !== null) document.getElementById("diabetes").value = diab;
+        if (years !== null) document.getElementById("year").value = years;
+        if (age1 !== null) document.getElementById("age").value = age1;
+        if (rsn !== null) document.getElementById("reason").value = rsn;
+        if (nat !== null) document.getElementById("nation").value = nat;
+
+
+
+    }
+    function clearall() {
+        window.localStorage.clear();
+    }
+</script>
+
+
+
+
+
