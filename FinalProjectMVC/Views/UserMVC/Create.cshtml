@@ -4,160 +4,155 @@
     ViewData["Title"] = "Create";
 }
 
-     <link href="~/css/style.css" rel="stylesheet" />
+<link href="~/css/style.css" rel="stylesheet" />
 
 
 
+<section id="form">
+    <div class="container-contact100">
+        <div class="wrap-contact100">
+            <form asp-action="Create" class="contact100-form validate-form">
 
+                <span class="contact100-form-title">
+                    Apply soon to land in space
+                </span>
 
 
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
 
-    <section id="form">
-        <div class="container-contact100">
-            <div class="wrap-contact100">
-                <form asp-action="Create" class="contact100-form validate-form">
+                <label class="label-input100">Tell us your name *</label>
+                <div class="wrap-input100 rs1-wrap-input100 validate-input">
+                    <input asp-for="FirstName" id="firstname" class="input100" type="text" placeholder="First name" />
+                    <span class="focus-input100"></span>
 
-                    <span class="contact100-form-title">
-                        Apply soon to land in space
-                    </span>
+                </div>
+                <span asp-validation-for="FirstName" class="text-danger"></span>
 
 
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="wrap-input100 rs2-wrap-input100 validate-input">
+                    <input asp-for="LastName" id="lastname" class="input100" type="text" placeholder="Last name" />
+                    <span class="focus-input100"></span>
 
+                </div>
+                @*                <span asp-validation-for="LastName" class="text-danger"></span>
+                *@
 
-                    <label class="label-input100">Tell us your name *</label>
-                    <div class="wrap-input100 rs1-wrap-input100 validate-input">
-                        <input asp-for="FirstName" id="firstname" class="input100" type="text" placeholder="First name" />
-                        <span class="focus-input100"></span>
 
-                    </div>
-                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                <label class="label-input100">Email *</label>
+                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <input asp-for="Email" id="email" class="input100" type="text" placeholder="Enter your Email" />
+                    <span class="focus-input100"></span>
 
+                </div>
+                <span asp-validation-for="Email" class="text-danger"></span>
 
-                    <div class="wrap-input100 rs2-wrap-input100 validate-input">
-                        <input asp-for="LastName" id="lastname" class="input100" type="text" placeholder="Last name" />
-                        <span class="focus-input100"></span>
 
-                    </div>
-                    @*                <span asp-validation-for="LastName" class="text-danger"></span>
-*@
 
+                <label class="label-input100">Phone number *</label>
+                <div class="wrap-input100">
+                    <input asp-for="PhoneNo" id="phone" class="input100" type="text" placeholder="Enter Your Phone Number" />
+                    <span class="focus-input100"></span>
 
-<label class="label-input100">Email *</label>
-<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-    <input asp-for="Email" id="email" class="input100" type="text" placeholder="Enter your Email" />
-    <span class="focus-input100"></span>
+                </div>
+                <span asp-validation-for="PhoneNo" class="text-danger"></span>
 
-</div>
-<span asp-validation-for="Email" class="text-danger"></span>
 
 
+                <label class="label-input100 ">Gender *</label>
+                <div class="wrap-input100 validate-input radiostyle">
+                    <input asp-for="Gender" class="radioclass" id="gender" value="Male" type="radio" />Male
+                    <input asp-for="Gender" class="radioclass" id="gender" value="Female" type="radio" />Female
+                    <span class="focus-input100"></span>
 
-<label class="label-input100">Phone number *</label>
-<div class="wrap-input100">
-    <input asp-for="PhoneNo" id="phone" class="input100" type="text" placeholder="Enter Your Phone Number" />
-    <span class="focus-input100"></span>
+                </div>
+                <span asp-validation-for="Gender" class="text-danger"></span>
 
-</div>
-<span asp-validation-for="PhoneNo" class="text-danger"></span>
 
 
+                <label class="label-input100 ">Year of Travelling *</label>
+                <div class="wrap-input100 validate-input">
+                    <select asp-for="Years" asp-items="@ViewBag.year" class="Year" style="width: 450px;" id="year">
+                        <option>Select a Year</option>
 
-<label class="label-input100 ">Gender *</label>
-<div class="wrap-input100 validate-input radiostyle">
-    <input asp-for="Gender" class="radioclass" id="gender" value="Male" type="radio" />Male
-    <input asp-for="Gender" class="radioclass" id="gender" value="Female" type="radio" />Female
-    <span class="focus-input100"></span>
+                    </select>
 
-</div>
-<span asp-validation-for="Gender" class="text-danger"></span>
 
 
 
-<label class="label-input100 ">Year of Travelling *</label>
-<div class="wrap-input100 validate-input">
-    <select asp-for="Years" asp-items="@ViewBag.year" class="Year" style="width: 450px;" id="year">
-        <option>Select a Year</option>
+                </div>
+                <span asp-validation-for="Years" class="text-danger"></span>
 
-    </select>
 
 
+                <label class="label-input100">Age *</label>
+                <div class="wrap-input100 ">
+                    <input asp-for="Age" id="age" class="input100" type="text" placeholder="Enter your age" />
+                    <span class="focus-input100"></span>
 
+                </div>
+                <span asp-validation-for="Age" class="text-danger"></span>
 
-</div>
-<span asp-validation-for="Years" class="text-danger"></span>
 
 
+                <label class="label-input100">Nationality *</label>
+                <div class="wrap-input100 ">
+                    <input asp-for="Nationality" id="nation" class="input100" type="text" placeholder="Enter your nationality" />
+                    <span class="focus-input100"></span>
 
-<label class="label-input100">Age *</label>
-<div class="wrap-input100 ">
-    <input asp-for="Age" id="age" class="input100" type="text" placeholder="Enter your age" />
-    <span class="focus-input100"></span>
+                </div>
+                <span asp-validation-for="Nationality" class="text-danger"></span>
 
-</div>
-<span asp-validation-for="Age" class="text-danger"></span>
 
 
+                <label class="label-input100">Address *</label>
+                <div class="wrap-input100 validate-input">
+                    <input asp-for="Address" id="address" class="input100" type="text" placeholder="Enter your address" />
+                    <span class="focus-input100"></span>
 
-<label class="label-input100">Nationality *</label>
-<div class="wrap-input100 ">
-    <input asp-for="Nationality" id="nation" class="input100" type="text" placeholder="Enter your nationality" />
-    <span class="focus-input100"></span>
+                </div>
+                <span asp-validation-for="Address" class="text-danger"></span>
 
-</div>
-<span asp-validation-for="Nationality" class="text-danger"></span>
 
 
+                <label class="label-input100 ">Affected by Asthma *</label>
+                <div class="wrap-input100 validate-input radiostyle">
+                    <input asp-for="Asthma" id="asthma" class="radioclass" value="Yes" type="radio" /> Yes
+                    <input asp-for="Asthma" id="asthma" class="radioclass" value="No" type="radio" />No
+                    <span class="focus-input100"></span>
 
-<label class="label-input100">Address *</label>
-<div class="wrap-input100 validate-input">
-    <input asp-for="Address" id="address" class="input100" type="text" placeholder="Enter your address" />
-    <span class="focus-input100"></span>
+                </div>
+                <span asp-validation-for="Asthma" class="text-danger"></span>
 
-</div>
-<span asp-validation-for="Address" class="text-danger"></span>
 
 
+                <label class="label-input100 ">Affected by BP/Diabetes *</label>
+                <div class="wrap-input100 validate-input radiostyle">
+                    <input asp-for="Diabetes" id="diabetes" class="radioclass" value="Yes" type="radio" />Yes
+                    <input asp-for="Diabetes" id="diabetes" class="radioclass" value="No" type="radio" />No
+                    <span class="focus-input100"></span>
 
-<label class="label-input100 ">Affected by Asthma *</label>
-<div class="wrap-input100 validate-input radiostyle">
-    <input asp-for="Asthma" id="asthma" class="radioclass" value="Yes" type="radio" /> Yes
-    <input asp-for="Asthma" id="asthma" class="radioclass" value="No" type="radio" />No
-    <span class="focus-input100"></span>
+                </div>
+                <span asp-validation-for="Diabetes" class="text-danger"></span>
 
-</div>
-<span asp-validation-for="Asthma" class="text-danger"></span>
 
 
+                <label class="label-input100">Reason to Travel *</label>
+                <div class="wrap-input100 validate-input" data-validate="Message is required">
+                    <textarea asp-for="Reason" id="message" class="input100" placeholder="Write us a message"></textarea>
+                    <span class="focus-input100"></span>
 
-<label class="label-input100 ">Affected by BP/Diabetes *</label>
-<div class="wrap-input100 validate-input radiostyle">
-    <input asp-for="Diabetes" id="diabetes" class="radioclass" value="Yes" type="radio" />Yes
-    <input asp-for="Diabetes" id="diabetes" class="radioclass" value="No" type="radio" />No
-    <span class="focus-input100"></span>
 
-</div>
-<span asp-validation-for="Diabetes" class="text-danger"></span>
+                </div>
+                <span asp-validation-for="Reason" class="text-danger"></span>
 
 
+                <div class="container-contact100-form-btn">
 
-<label class="label-input100">Reason to Travel *</label>
-<div class="wrap-input100 validate-input" data-validate="Message is required">
-    <textarea asp-for="Reason" id="message" class="input100" placeholder="Write us a message"></textarea>
-    <span class="focus-input100"></span>
+                    <input type="submit" value="Submit" onclick="clearall()" class="contact100-form-btn" />
 
 
-</div>
-<span asp-validation-for="Reason" class="text-danger"></span>
-
-
-<div class="container-contact100-form-btn">
-
-    <input type="submit" value="Submit" onclick="clearall()" class="contact100-form-btn" />
-
-
-</div>
+                </div>
 
 
 
@@ -165,15 +160,15 @@
             </form>
 
 
-<div class="contact100-more flex-col-c-m">
-</div>
+            <div class="contact100-more flex-col-c-m">
+            </div>
 
-<div class="container-contact100-form-btn">
+            <div class="container-contact100-form-btn">
 
-    <button onclick="save()" id="save">Save</button>
+                <button onclick="save()" id="save">Save</button>
 
 
-</div>
+            </div>
 
         </div>
     </div>
@@ -212,8 +207,6 @@
     }
 
 
-
-
     window.onload = function () {
         var faname = localStorage.getItem("fname");
         var emails = localStorage.getItem("semail");
@@ -247,28 +240,6 @@
         window.localStorage.clear();
 
     }
-
-
-   @* $(document).ready(function () {
-        $("#email").on("change", function () {
-            $.ajax({
-                type: "Post",
-                url: "/UserMVC/emailcheck",
-                data: { "mail": $("#email").val() },
-                success: function (data) {
-                    if (data == 1) {
-
-                        confirm("Email is already is used")
-
-                        window.location.reload();
-                    }
-
-
-                }
-            })
-        })
-    })*@
-
 
 
     $(document).ready(function () {
