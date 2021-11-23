@@ -20,6 +20,7 @@ namespace FinalProjectWEBAPI.Models
         [Required(ErrorMessage = "Please enter your FirstName.")]
         
         [DataType(DataType.Text)]
+        [RegularExpression(@"[a-zA-Z]+$",ErrorMessage ="Only Alphabets")]
         public string FirstName { get; set; }
 
         [DataType(DataType.Text)]

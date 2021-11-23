@@ -330,7 +330,9 @@ textarea:focus, input:focus {
 	padding-top: 23px;
 	
   }
+.navbut{
 
+}
 
 #save {
 	display: -webkit-box;
@@ -444,8 +446,7 @@ textarea:focus, input:focus {
   }
   
   
-  /*------------------------------------------------------------------
-  [ Alert validate ]*/
+
   
   .validate-input {
 	position: relative;
